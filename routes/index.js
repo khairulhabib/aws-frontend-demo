@@ -5,6 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Cloud Day Demo ID 2022' });
 });
-
+router.post('/', function (req, res) {
+  console.log(req.body.title);
+  console.log(req.body.description);
+  res.send(req.body.increase);
+});
 
 module.exports = router;

@@ -3,6 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to monitoring room 
-  button(onclick='increase()') increase 
-  button(onclick='decrease()') decrease 
+  form(name="increase",method="post")
+    .actions 
+      input(type="submit",value="increase")
+  form(name="decrease",method="post")
+    .actions 
+      input(type="submit",value="decrease")
+  //- button(onclick='increase()') increase 
+  //- button(onclick='decrease()') decrease 
 
