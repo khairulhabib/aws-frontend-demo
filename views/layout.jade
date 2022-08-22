@@ -3,12 +3,20 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    //- script. 
-    //-   var increase = function(){
-    //-     alert("increase!")
-    //-   }
-    //-   var decrease = function(){
-    //-     alert("decrease!")
-    //-   }
+    script. 
+      var data = {}
+      var increase = function(){
+        alert("increase!")
+        const response = await fetch("https://4d8lzogr7j.execute-api.ap-southeast-1.amazonaws.com/dev/",{
+          method: 'POST',
+          body: JSON.stringigy(data),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+      }
+      var decrease = function(){
+        alert("decrease!")
+      }
   body
     block content
