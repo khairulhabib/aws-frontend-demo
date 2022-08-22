@@ -5,10 +5,15 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Cloud Day Demo ID 2022' });
 });
-router.post('/', function (req, res) {
-  console.log(req.body.title);
-  console.log(req.body.description);
-  res.status(204).send();
+
+const btnIncrease = document.getElementById('increase');
+btnIncrease.addEventListener('click',function(e){
+  console.log('increase clicked')
 });
+const btnDecrease = document.getElementById('decrease');
+btnIncrease.addEventListener('click',function(e){
+  console.log('decrease clicked')
+});
+
 
 module.exports = router;
