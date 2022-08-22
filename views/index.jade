@@ -3,6 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to monitoring room 
+  script 
+    var increase = function(){
+      console.log("increase clicked")
+    }
+    var decrease = function(){
+      console.log("decrease clicked")
+    }
   button(onclick='increase()') increase 
   button(onclick='decrease()') decrease
 
