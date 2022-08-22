@@ -4,12 +4,11 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script. 
-      var data = {}
       var increase = function(){
         alert("increase!")
         const response = await fetch("https://4d8lzogr7j.execute-api.ap-southeast-1.amazonaws.com/dev/",{
           method: 'POST',
-          body: JSON.stringigy(data),
+          body: null,
           headers: {
             'Content-Type': 'application/json'
           }
