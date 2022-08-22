@@ -5,9 +5,11 @@ block content
   p Welcome to monitoring room 
   form(name="increase",method="post")
     .actions 
+      input(type="hidden",name="control",value="increase")
       input(type="submit",value="increase")
   form(name="decrease",method="post")
     .actions 
+      input(type="hidden",name="control",value="decrease")
       input(type="submit",value="decrease")
   //- button(onclick='increase()') increase 
   //- button(onclick='decrease()') decrease 
