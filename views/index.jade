@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to monitoring room 
+  form(name="adjust-room", method="post")
+    .input 
+      span.label increase temperature 
+    .actions 
+      input(type="submit",value="increase")
+
