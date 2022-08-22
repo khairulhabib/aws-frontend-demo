@@ -38,4 +38,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var increase = function(){
+  alert("increase!")
+}
+var decrease = function(){
+  alert("decrease!")
+}
+
 module.exports = app;
