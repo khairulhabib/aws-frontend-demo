@@ -14,6 +14,8 @@ html
             'Content-Type': 'application/json'
           }
         });
+        const myJson = await response.json();
+        alert(myJson)
       }
       var decrease = function(){
         alert("decrease!")
