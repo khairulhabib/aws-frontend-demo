@@ -1,4 +1,9 @@
 var express = require('express');
+const https = require('https');
+const options = {
+  method: 'POST'
+}
+
 var router = express.Router();
 var url = "https://4d8lzogr7j.execute-api.ap-southeast-1.amazonaws.com/dev/";
 
@@ -13,13 +18,28 @@ router.post('/', function (req, res) {
 });
 
 async function postData(){
-  const response = await fetch(url,{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+  let request = https.request(url,options,(res) => {
+    if(res.statusCode!==200){
+      console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
+      res.resume();
+      return;
+    }
+
+    let data = '';
+
+    res.on('data', (chunk) => {
+      data += chunk;
+    });
+  
+    res.on('close', () => {
+      console.log('Retrieved all data');
+      console.log(JSON.parse(data));
+    });
+
   });
-  return response.json();
+
+  request.end();
+  
 }
 
 module.exports = router;
