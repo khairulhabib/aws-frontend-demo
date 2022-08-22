@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 var express = require('express');
 var router = express.Router();
 var url = "https://4d8lzogr7j.execute-api.ap-southeast-1.amazonaws.com/dev/";
