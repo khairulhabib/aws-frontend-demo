@@ -30,7 +30,7 @@ async function postData(power){
       return;
     }
 
-    let data = JSON.stringify({"power":power,"room":0})
+    let data = ''
 
     res.on('data', (chunk) => {
       data += chunk;
@@ -43,6 +43,8 @@ async function postData(power){
 
   });
 
+  let body = JSON.stringify({"power":power,"room":0})
+  request.write(body)
   request.end();
   
 }
