@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function (req, res) {
   var control = req.body.control;
   postData();
-  res.send(req.body.control);
+  res.status(204).send();
 });
 
 async function postData(){
