@@ -9,7 +9,7 @@ var url = "https://4d8lzogr7j.execute-api.ap-southeast-1.amazonaws.com/dev/";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Cloud Day Demo ID 2022' });
+  res.render('index', { title: 'Smart Control' });
 });
 router.post('/', function (req, res) {
   var control = req.body.control;
