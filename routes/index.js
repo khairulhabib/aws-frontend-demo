@@ -13,11 +13,16 @@ router.get('/', function(req, res, next) {
 });
 router.post('/', function (req, res) {
   var control = req.body.control;
-  postData();
+  if(control==='increase'){
+    postData('high');
+  }else{
+    postData('low');
+  }
+  
   res.status(204).send();
 });
 
-async function postData(){
+async function postData(power){
   let request = https.request(url,options,(res) => {
     if(res.statusCode!==200){
       console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
@@ -25,7 +30,7 @@ async function postData(){
       return;
     }
 
-    let data = '';
+    let data = JSON.stringify({"power":power,"room":0})
 
     res.on('data', (chunk) => {
       data += chunk;
